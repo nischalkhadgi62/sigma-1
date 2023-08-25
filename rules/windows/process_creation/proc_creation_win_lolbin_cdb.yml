@@ -6,7 +6,7 @@ references:
     - https://lolbas-project.github.io/lolbas/OtherMSBinaries/Cdb/
     - https://web.archive.org/web/20170715043507/http://www.exploit-monday.com/2016/08/windbg-cdb-shellcode-runner.html
     - https://twitter.com/nas_bench/status/1534957360032120833
-author: Beyu Denis, oscd.community, Nasreddine Bencherchali
+author: Beyu Denis, oscd.community, Nasreddine Bencherchali, Nischal Khadgi
 date: 2019/10/26
 modified: 2023/01/04
 tags:
@@ -26,6 +26,8 @@ detection:
         CommandLine|contains:
             - ' -c ' # Using a debugger script
             - ' -cf '
+            - ' -pd '
+            - ' -pn '
     condition: all of selection*
 falsepositives:
     - Legitimate use of debugging tools
